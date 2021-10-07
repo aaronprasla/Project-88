@@ -9,7 +9,7 @@ block_image_width = 5;
 block_image_height = 5;
 
 function load_img(){
-	fabric.Image.fromUrl("golf-h.png", function(Img){
+	fabric.Image.fromURL("golf-h.png", function(Img){
 		hole_obj = Img;
 		hole_obj.scaleToWidth(50);
 		hole_obj.scaleToHeight(50);
@@ -25,7 +25,7 @@ function load_img(){
 
 function new_image()
 {
-	fabric.Image.fromUrl("golf.png", function(Img){
+	fabric.Image.fromURL("golf.png", function(Img){
 		ball_obj = Img;
 		ball_obj.scaleToWidth(50);
 		ball_obj.scaleToHeight(50);
