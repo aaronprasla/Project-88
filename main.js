@@ -1,9 +1,12 @@
-canvas = document.getElementById('myCanvas');
+canvas = new fabric.Canvas('myCanvas');
 
 ball_x = 0;
 ball_y = 0;
 hole_x = 800;
 hole_y = 400;
+
+hole_obj = '';
+ball_obj = '';
 
 block_image_width = 5;
 block_image_height = 5;
@@ -25,7 +28,7 @@ function load_img(){
 
 function new_image()
 {
-	fabric.Image.fromURL("golf.png", function(Img){
+	fabric.Image.fromURL("ball.png", function(Img){
 		ball_obj = Img;
 		ball_obj.scaleToWidth(50);
 		ball_obj.scaleToHeight(50);
@@ -47,22 +50,22 @@ function my_keydown(e)
 		canvas.remove(ball_obj);
 	}
 	else{
-		if(keyPressed == '38')
+		if(keyPressed == '33')
 		{
 			up();
 			console.log("up");
 		}
-		if(keyPressed == '40')
+		if(keyPressed == '34')
 		{
 			down();
 			console.log("down");
 		}
-		if(keyPressed == '37')
+		if(keyPressed == '36')
 		{
 			left();
 			console.log("left");
 		}
-		if(keyPressed == '39')
+		if(keyPressed == '35')
 		{
 			right();
 			console.log("right");
@@ -82,7 +85,7 @@ function my_keydown(e)
 
 	function down()
 	{
-		if(ball_y >= 450){
+		if(ball_y <= 450){
 			ball_y = ball_y + block_image_height;
 			console.log('block_image_height = ' + block_image_height);
 			console.log('When up arrow key is pressed X = ' + ball_x + ' | Y = ' + ball_y);
